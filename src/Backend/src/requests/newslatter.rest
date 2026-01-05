@@ -1,0 +1,76 @@
+### Test de connexion à la base de données
+GET {{baseUrl}}/db-test
+
+### Base URL
+@baseUrl = http://localhost:3000
+
+# NOTE: Après le login, copiez l'accessToken et collez-le dans la variable ci-dessous
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3NTZjNDAxYi0xYThhLTQ3MWEtYTRkNi05NDUwODRmZjkyNzYiLCJyb2xlIjoic3Vic2NyaWJlciIsInN1YnNjcmlwdGlvbl9zdGF0dXMiOiJmcmVlIiwiaWF0IjoxNzY3MTc3ODYzLCJleHAiOjE3NjcxNzg3NjN9.EmE18MzNrgHaGE-IcdoYSIDM1q3MbjcKBfHi1NPF_aA
+
+### 1. AUTHENTIFICATION & COMPTE
+
+### 1.1 Inscription d'un nouvel utilisateur
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "carlos@mail.com",
+  "password": "password123"
+}
+
+### 1.2 Connexion (Récupérez le token ici)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "carlos@mail.com",
+  "password": "password123"
+}
+
+### 1.3 Obtenir mes infos (Vérification du rôle/statut)
+GET {{baseUrl}}/api/auth/me
+Authorization: Bearer {{token}}
+
+### 2. GESTION DES POSTS (CRUD)
+
+### 2.1 Créer un post (Payant)
+POST {{baseUrl}}/api/posts/create
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Ma Newsletter carlos dev",
+  "content": "Ceci est un contenu réservé aux abonnés payants.",
+  "is_paid": true
+}
+
+### 2.2 Récupérer tous les posts
+# (Les contenus payants seront masqués si non autorisé)
+GET {{baseUrl}}/api/posts/getAllPosts
+Authorization: Bearer {{token}}
+
+### 2.3 Récupérer un post spécifique par ID
+# (Remplacer l'ID par celui obtenu dans getAllPosts)
+GET {{baseUrl}}/api/posts/c54e8bd3-6ee0-4e3c-8395-2faba6ae24af
+Authorization: Bearer {{token}}
+
+### 2.4 Modifier un post (Si auteur ou admin)
+# (Remplacer l'ID par celui obtenu dans getAllPosts)
+PUT {{baseUrl}}/api/posts/updatepost/97a33bdf-bdee-4ee6-bc4d-4e7300d21ac0
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Titre mis à jour",
+  "content": "Le contenu a été modifié avec succès.",
+  "is_paid": true
+}
+
+### 2.5 Supprimer un post (Si auteur ou admin)
+# (Remplacer l'ID par celui obtenu dans getAllPosts)
+DELETE {{baseUrl}}/api/posts/deletepost/97a33bdf-bdee-4ee6-bc4d-4e7300d21ac0
+Authorization: Bearer {{token}}
+
+
+
+
