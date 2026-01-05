@@ -1,0 +1,109 @@
+/* Responsive Design for Mobile */
+
+/* Global Mobile Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem !important;
+    max-width: 100% !important;
+  }
+  
+  .container-small {
+    padding: 1rem !important;
+    margin: 1rem !important;
+  }
+  
+  .card {
+    margin: 1rem 0 !important;
+    padding: 1rem !important;
+  }
+  
+  .btn {
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+    margin: 0.25rem 0 !important;
+  }
+  
+  .dashboard-stats {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .creators-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .posts-container {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem !important;
+  }
+  
+  .alert {
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+  }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem !important;
+  }
+  
+  .card {
+    padding: 0.75rem !important;
+  }
+  
+  .btn {
+    width: 100% !important;
+    margin: 0.5rem 0 !important;
+  }
+  
+  .dashboard-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .card-header {
+    font-size: 1.25rem !important;
+  }
+  
+  .creator-card {
+    padding: 1rem !important;
+  }
+  
+  .post-item-card {
+    padding: 1rem !important;
+  }
+}
+
+/* Touch-friendly buttons */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  .creator-actions .btn {
+    padding: 1rem !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Improve readability on mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+  
+  h1, h2, h3 {
+    line-height: 1.3 !important;
+  }
+  
+  p {
+    margin-bottom: 1rem !important;
+  }
+}

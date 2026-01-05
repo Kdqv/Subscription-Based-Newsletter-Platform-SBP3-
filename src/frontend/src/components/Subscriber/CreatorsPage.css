@@ -1,0 +1,85 @@
+/* Creators Page Styles */
+.creators-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.creator-card {
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.creator-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.creator-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.creator-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.creator-info p {
+  font-size: 0.9rem;
+}
+
+.latest-post {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+  border-left: 4px solid #3498db;
+}
+
+.latest-post h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.creator-actions {
+  margin-top: 1rem;
+}
+
+.creator-actions .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.creator-actions .btn-success {
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
+
+.creator-actions .btn-success:hover {
+  background-color: #219a52;
+  border-color: #219a52;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .creators-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .creator-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .creator-actions {
+    flex-direction: column;
+  }
+}
