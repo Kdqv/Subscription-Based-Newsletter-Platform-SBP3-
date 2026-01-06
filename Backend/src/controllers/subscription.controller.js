@@ -1,4 +1,4 @@
-import { pool } from '../config/db.js';
+import { pool } from '../db.js';
 
 // Obtenir le statut d'abonnement de l'utilisateur
 export const getSubscriptionStatus = async (req, res) => {
