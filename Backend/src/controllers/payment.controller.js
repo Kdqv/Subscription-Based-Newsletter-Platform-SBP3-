@@ -1,5 +1,5 @@
 import { createCheckoutSession, getSessionStatus } from '../services/stripe.service.js';
-import { pool } from '../config/db.js';
+import { pool } from '../db.js';
 
 // Créer une session de paiement
 export const createPaymentSession = async (req, res) => {
