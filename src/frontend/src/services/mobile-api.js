@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // API simplifiée pour mobile avec IP directe
-const MOBILE_API_URL = 'http://10.4.2.127:5000/api';
+const MOBILE_API_URL = 'https://subscription-based-newsletter-platform-lh3y.onrender.com/';
 
 const mobileApi = axios.create({
   baseURL: MOBILE_API_URL,
