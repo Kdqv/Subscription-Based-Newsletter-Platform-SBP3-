@@ -16,7 +16,7 @@ process.env.REFRESH_TOKEN_EXPIRES_IN = process.env.REFRESH_TOKEN_EXPIRES_IN || '
 
 const app = express()
 app.use(cors({ 
-  origin: ['http://localhost:3000', 'http://localhost:5173', 'http://10.4.2.127:3000', /^http:\/\/192\.168\.\d+\.\d+:\d+$/, 'https://votre-frontend.onrender.com'], 
+  origin: ['http://localhost:3000', 'http://localhost:5173', 'http://10.4.2.127:3000', /^http:\/\/192\.168\.\d+\.\d+:\d+$/, 'https://subscription-based-newsletter-platform-lh3y.onrender.com'], 
   credentials: true 
 }));
 app.use(express.json())
