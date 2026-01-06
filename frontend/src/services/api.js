@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Détecter automatiquement l'hôte pour mobile
 const getApiUrl = () => {
-  return process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+  return process.env.REACT_APP_API_URL || 'https://subscription-based-newsletter-platform-kg5g.onrender.com/';
 
 };
 
@@ -70,7 +70,7 @@ api.interceptors.response.use(
     if (error.code === 'NETWORK_ERROR' || error.message.includes('Network Error')) {
       console.log('Network error detected, trying fallback...');
       
-      const fallbackUrl = process.env.REACT_APP_API_URL || 'http://10.4.2.127:5000/api';
+      const fallbackUrl = process.env.REACT_APP_API_URL || 'https://subscription-based-newsletter-platform-kg5g.onrender.com/';
       console.log('Trying fallback URL:', fallbackUrl);
       
       if (originalRequest) {
