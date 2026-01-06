@@ -13,6 +13,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 process.env.JWT_SECRET = process.env.JWT_SECRET || '0e5948c5d6e572d81bd3620e816fa2b680befe633171320d39a733491bb4e924';
 process.env.ACCESS_TOKEN_EXPIRES_IN = process.env.ACCESS_TOKEN_EXPIRES_IN || '15m';
 process.env.REFRESH_TOKEN_EXPIRES_IN = process.env.REFRESH_TOKEN_EXPIRES_IN || '7d';
+process.env.DATABASE_URL = process.env.DATABASE_URL || 'postgresql://postgres:votre-mot-de-passe@host:port/newsletter_db';
 
 const app = express()
 app.use(cors({ 
