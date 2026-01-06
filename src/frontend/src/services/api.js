@@ -16,10 +16,10 @@ const getApiUrl = () => {
   
   if (isMobile) {
     // Mobile : utiliser l'IP locale
-    return 'http://10.4.2.127:5000/api';
+    return 'https://subscription-based-newsletter-platform-lh3y.onrender.com/api';
   } else {
     // PC : utiliser localhost
-    return 'http://localhost:5000/api';
+    return 'https://subscription-based-newsletter-platform-lh3y.onrender.com/api';
   }
 };
 
