@@ -8,12 +8,23 @@ import postRoutes from './routes/post.route.js'
 import paymentRoutes from './routes/payment.route.js'
 import subscriptionRoutes from './routes/subscription.route.js'
 
+// Variables d'environnement temporairement
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
+process.env.JWT_SECRET = process.env.JWT_SECRET || '0e5948c5d6e572d81bd3620e816fa2b680befe633171320d39a733491bb4e924';
+process.env.ACCESS_TOKEN_EXPIRES_IN = process.env.ACCESS_TOKEN_EXPIRES_IN || '15m';
+process.env.REFRESH_TOKEN_EXPIRES_IN = process.env.REFRESH_TOKEN_EXPIRES_IN || '7d';
+
 const app = express()
 app.use(cors({ 
-  origin: ['http://localhost:3000', 'http://localhost:5173', 'http://10.4.2.127:3000', /^http:\/\/192\.168\.\d+\.\d+:\d+$/, 'https://subscription-based-newsletter-platform-4gre.onrender.com'], 
+  origin: ['http://localhost:3000', 'http://localhost:5173', 'http://10.4.2.127:3000', /^http:\/\/192\.168\.\d+\.\d+:\d+$/, 'https://votre-frontend.onrender.com'], 
   credentials: true 
 }));
 app.use(express.json())
+
+// Route de santé pour vérifier que le backend fonctionne
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK', message: 'Backend is running!' });
+});
 
 app.use('/api/auth', authRoutes)
 app.use('/api/posts', postRoutes)
