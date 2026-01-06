@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors';
-import { pool } from './config/db.js'
+import { pool } from './db.js'
 import { errorMiddleware } from './middlewares/error.middleware.js'
 import { authMiddleware } from './middlewares/auth.middleware.js'
 import authRoutes from './routes/auth.route.js'
