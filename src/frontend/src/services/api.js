@@ -8,7 +8,7 @@ const getApiUrl = () => {
   
   // En production, utiliser le backend Render
   if (process.env.NODE_ENV === 'production') {
-    return 'https://votre-backend.onrender.com/api';
+    return 'https://subscription-based-newsletter-platform-lh3y.onrender.com/api';
   }
   
   // Détecter si on est sur mobile
