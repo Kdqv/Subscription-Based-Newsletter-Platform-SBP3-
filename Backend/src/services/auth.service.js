@@ -1,4 +1,4 @@
-import { pool } from '../config/db.js'
+import { pool } from './config/db.js'
 import bcrypt from 'bcrypt'
 import { signToken } from '../utils/token.js'
 
