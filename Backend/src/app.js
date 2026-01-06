@@ -13,11 +13,11 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 process.env.JWT_SECRET = process.env.JWT_SECRET || '0e5948c5d6e572d81bd3620e816fa2b680befe633171320d39a733491bb4e924';
 process.env.ACCESS_TOKEN_EXPIRES_IN = process.env.ACCESS_TOKEN_EXPIRES_IN || '15m';
 process.env.REFRESH_TOKEN_EXPIRES_IN = process.env.REFRESH_TOKEN_EXPIRES_IN || '7d';
-process.env.DATABASE_URL = process.env.DATABASE_URL || 'postgresql://postgres:votre-mot-de-passe@host:port/newsletter_db';
+process.env.DATABASE_URL = process.env.DATABASE_URL || 'postgresql://newsletter_platform_user:g8hhyoS68Z6U4Ln8nzOzoViQRsZl6V3t@dpg-d5e5j43uibrs73c8r8p0-a/newsletter_platform';
 
 const app = express()
 app.use(cors({ 
-  origin: ['http://localhost:3000', 'http://localhost:5173', 'http://10.4.2.127:3000', /^http:\/\/192\.168\.\d+\.\d+:\d+$/, 'https://subscription-based-newsletter-platform-4gre.onrender.com/'], 
+  origin: ['http://localhost:3000', 'http://localhost:5173', 'http://10.4.2.127:3000', /^http:\/\/192\.168\.\d+\.\d+:\d+$/, 'https://subscription-based-newsletter-platform-rgzg.onrender.com'], 
   credentials: true 
 }));
 app.use(express.json())
