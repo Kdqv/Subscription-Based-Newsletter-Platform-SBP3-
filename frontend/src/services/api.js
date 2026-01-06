@@ -2,25 +2,8 @@ import axios from 'axios';
 
 // Détecter automatiquement l'hôte pour mobile
 const getApiUrl = () => {
-  if (process.env.REACT_APP_API_URL) {
-    return process.env.REACT_APP_API_URL;
-  }
-  
-  // En production, utiliser le backend Render
-  if (process.env.NODE_ENV === 'production') {
-    return 'https://subscription-based-newsletter-platform-lh3y.onrender.com/api';
-  }
-  
-  // Détecter si on est sur mobile
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
-  
-  if (isMobile) {
-    // Mobile : utiliser l'IP locale
-    return 'https://subscription-based-newsletter-platform-lh3y.onrender.com/api';
-  } else {
-    // PC : utiliser localhost
-    return 'https://subscription-based-newsletter-platform-lh3y.onrender.com/api';
-  }
+  return process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+
 };
 
 const API_BASE_URL = getApiUrl();
@@ -87,7 +70,7 @@ api.interceptors.response.use(
     if (error.code === 'NETWORK_ERROR' || error.message.includes('Network Error')) {
       console.log('Network error detected, trying fallback...');
       
-      const fallbackUrl = 'http://10.4.2.127:5000/api';
+      const fallbackUrl = process.env.REACT_APP_API_URL || 'http://10.4.2.127:5000/api';
       console.log('Trying fallback URL:', fallbackUrl);
       
       if (originalRequest) {
