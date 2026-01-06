@@ -1,4 +1,4 @@
-import { pool } from '../config/db.js'
+import { pool } from '../db.js'
 
 
 export const createPost = async (req, res, next) => {
