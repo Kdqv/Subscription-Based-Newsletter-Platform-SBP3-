@@ -1,14 +1,20 @@
-import pkg from 'pg'
-const { Pool } = pkg
+import pkg from 'pg';
+import dotenv from 'dotenv';
 
-export const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: String(process.env.DB_PASSWORD),
-  port: Number(process.env.DB_PORT),
-})
+dotenv.config();
+const { Pool } = pkg;
 
-pool.on('connect', () => {
-  console.log('POSTGRES CONNECTÉ')
-})
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL
+});
+
+// TEST CONNEXION
+pool.query('SELECT NOW()', (err, res) => {
+  if (err) {
+    console.error('DB connection error', err.message);
+  } else {
+    console.log('DB connected at', res.rows[0].now);
+  }
+});
+
+export default pool;
